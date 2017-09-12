@@ -1,0 +1,116 @@
+
+<div class="scrollable">
+	<div class="scrollable-content">
+		<div class="list-group text-center">
+			<!-- cục giới thiệu -->
+			<div class="list-group-item list-group-item-home">
+				<img src = "https://hcmuaf.edu.vn/images/banner_nlu.jpg" alt = "https://hcmuaf.edu.vn/images/banner_nlu.jpg" width = "750" height ="60">
+				<h1 style = "padding:13px" "color:rgb(113, 159, 209);"> <font face ="times new roman"  >ĐỒ ÁN NGHIÊN CỨU KHOA HỌC <br> </font></h1>
+			</div>
+			
+			<!-- Cục cảm biến mưa -->
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-gamepad feature-icon text-primary"></i>
+				</div>
+				<div>
+					<h2 style =  "padding:13px;background-color:orange;color:rgb(139, 49, 174);"> <font face ="times new roman"  >Giá Trị Cảm Biến </font></h2>
+					<img src = "https://creatordev.io/images/device-server-animation.gif" alt = "https://creatordev.io/images/device-server-animation.gif" width = "720" height ="150">
+					<div style="background-color:powderblue;">
+					
+					<br><span style="color:green;font-size:120%" "text-align:left;"><font face ="times new roman" size="4.95px" ><b>Nhiệt Độ Kênh 1: </b></span><b>{{Temp_1}} </b><sup>o</sup>C <br>
+					<br><span style="color:green;font-size:120%" "text-align:left;"><font face ="times new roman" size="4.95px" ><b>Nhiệt Độ Kênh 2: </b></span><b>{{Temp_2}} </b><sup>o</sup>C <br>
+					<br><span style="color:green;font-size:120%" "text-align:left;"><font face ="times new roman" size="4.95px" ><b>Nhiệt Độ Kênh 3: </b></span><b>{{Temp_3}} </b><sup>o</sup>C <br>
+					<br><span style="color:green;font-size:120%" "text-align:left;"><font face ="times new roman" size="4.95px" ><b>Nhiệt Độ Kênh 4: </b></span><b>{{Temp_4}} </b><sup>o</sup>C <br>
+					<br><span style="color:green;font-size:120%" "text-align:left;"><font face ="times new roman" size="4.95px" ><b>Nhiệt Độ Kênh 5: </b></span><b>{{Temp_5}} </b><sup>o</sup>C <br>
+					<br><span style="color:green;font-size:120%" "text-align:left;"><font face ="times new roman" size="4.95px" ><b>Nhiệt Độ Kênh 6: </b></span><b>{{Temp_5}} </b><sup>o</sup>C <br>
+					<br><span style="color:green;font-size:120%" "text-align:left;"><font face ="times new roman" size="4.95px" ><b>Độ Ẩm Lúa: </b></span><b> {{DoAmDat1}} </b> % <br>					
+					</div>
+				</div>
+			</div>
+			
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-gamepad feature-icon text-primary"></i>
+				</div>
+				<div>
+				<h2 style =  "padding:13px;background-color:orange;color:rgb(139, 49, 174);"> <font face ="times new roman"  >Thiết Bị </font><small></small>
+				</h2>
+		
+					<br><span style="color:green;"><b> Triac 1:</b></span><span style="color:red;"><i>{{Triac_1}}</i></span><br>
+					<br><span style="color:green;"><b> Triac 2:</b></span><span style="color:red;"><i>{{Triac_2}}</i></span><br>
+					<br><span style="color:green;"><b> Triac 3:</b></span><span style="color:red;"><i>{{Triac_3}}</i></span><br>
+					<br><span style="color:green;"><b> Triac 4:</b></span><span style="color:red;"><i>{{Triac_4}}</i></span><br>
+					<br><span style="color:green;"><b> Triac 5:</b></span><span style="color:red;"><i>{{Triac_5}}</i></span><br>
+					<br><span style="color:green;"><b> Triac 6:</b></span><span style="color:red;"><i>{{Triac_6}}</i></span><br>
+					
+				</div>
+			</div>
+			
+			<!-- Cục thay đổi trạng thái LED -->
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-tachometer feature-icon  text-primary"></i>
+				</div>
+				<div>
+					<h2 style =  "padding:13px;background-color:orange;color:rgb(139, 49, 174);"> <font face ="times new roman"  > Chế Độ Hoạt Động </font><small></small>
+					</h2>
+					Lựa Chọn Chế Độ:
+					<select ng-model="myVar">
+					  <option value="Auto">Điều khiển Tự Động
+					  <option value="Hand">Điều khiển Bằng Tay
+					</select>
+
+					<hr>
+					<div ng-switch="myVar">
+					  <div ng-switch-when="Auto">
+						  <h3 style =  "padding:13px;background-color:rgb(236, 255, 179);color:rgb(255, 92, 51);font-size:150%"> <font face ="times new roman"  > Đang Bật Chế Độ Điều khiển Tự Động<h3></font>
+						 <div>
+							<!-- rgb(144, 144, 144) rgb(26, 255, 83) rgb(236, 255, 179) rgb(217, 217, 217) -->
+							
+							<br><span style = "color:rgb(77, 77, 77);font-size:100%"><font face ="times new roman"> __Nhiệt Độ:   <input type="text" class="input text" size = "4" ng-model="Parameter[0]" ng-change="SET_VALUE()" /></b><sup> o</sup>C <br>
+							<br><span style = "padding:13px;color:rgb(77, 77, 77);font-size:100%"><font face ="times new roman">Độ Ẩm Đất:<input type="text" class="input text" size = "4" ng-model="Parameter[1]" ng-change="SET_VALUE()" /></b> <strong>%</strong> <br>
+							<p></p> 
+							<p></p> 
+							<script src = "http://code.jquery.com/jquery-latest.js"></script>
+							
+							<img src = "http://xn----dtbfdbwspgnceulm.xn--p1ai/download/file.php?avatar=8628_1383950701.gif" alt = "" width = "60" height ="45">
+							<button type ="reset" style = "color:rgb(179, 89, 0)" class="button" size = "4" ng-click="Reset_W()"><img src = "https://marketplace.canva.com/MACGiS88K1Y/1/thumbnail_large/canva-flat-arrow-sign-reset-icon-hexagon-button-MACGiS88K1Y.png" alt = "https://marketplace.canva.com/MACGiS88K1Y/1/thumbnail_large/canva-flat-arrow-sign-reset-icon-hexagon-button-MACGiS88K1Y.png" width = "50" height ="45"></button>
+							<button style = "color:rgb(179, 89, 0)" class="button" size = "4" ng-click="Auto_Run_W()"><img src = "http://www.free-icons-download.net/images/start-button-icon-44464.png" alt = "http://www.free-icons-download.net/images/start-button-icon-44464.png" width = "50" height ="45"></button>
+							<button style = "color:rgb(228, 217, 205)" class="button" size = "4" ng-click="Auto_Stop_W()"><img src = "http://www.free-icons-download.net/images/player-stop-icon-3266.png" alt = "http://www.free-icons-download.net/images/player-stop-icon-3266.png" width = "50" height ="45"></button>
+							
+						 </div>
+					  </div>
+					  <div ng-switch-when="Hand">
+						 <h3 style =  "padding:13px;background-color:rgb(236, 255, 179);color:rgb(255, 92, 51);font-size:150%"> <font face ="times new roman"  > Đang Bật Chế Độ Điều khiển Bằng Tay <h3></font>
+						 <div>
+							<!-- rgb(144, 144, 144) rgb(26, 255, 83) rgb(236, 255, 179) rgb(217, 217, 217) -->
+						
+							<br><span style = "color:rgb(77, 77, 77);font-size:100%"><font face ="times new roman">Triac 1 <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="Hand_W()"ng-model="Triac_status_Z1[1]"  /></font><br>
+							<font face ="times new roman"><br>Triac 2 <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="Hand_W()"ng-model="Triac_status_Z1[2]"  /></font><br>
+							<font face ="times new roman"><br>Triac 3 <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="Hand_W()"ng-model="Triac_status_Z1[3]"  /></font><br>
+							<font face ="times new roman"><br>Triac 4 <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="Hand_W1()"ng-model="Triac_status_Z2[1]"  /></font><br>
+							<font face ="times new roman"><br>Triac 5 <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="Hand_W1()"ng-model="Triac_status_Z2[2]"  /></font><br>
+							<font face ="times new roman"><br>Triac 6 <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="Hand_W1()"ng-model="Triac_status_Z2[3]"  /></font><br>
+							
+					</div>
+					  </div>
+				
+					  <div ng-switch-default>
+						 <p></p>
+						 <img src = "http://i.imgur.com/4u9sFsO.gif" alt = "http://i.imgur.com/4u9sFsO.gif" width = "150" height ="150">
+					  </div>
+					</div>
+					<hr>
+
+					<p>You must select one of two control modes: manual or automatic</p>
+				</div>
+			</div>
+			
+			<!-- Cục cập nhập giá trị cảm biến -->
+		
+			</div>
+			
+			
+		</div>
+	</div>
